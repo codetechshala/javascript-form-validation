@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+    <head>
+        <title>Page Title</title>
+        <link rel="stylesheet" href="form-style.css" />
+        <script>
+            function validateForm() {
+                var name     = document.forms["myForm"]["myName"].value;
+                var email    = document.forms["myForm"]["myEmail"].value;
+                var gender   = document.forms["myForm"]["gender"].value;
+                var language = document.forms["myForm"]["language"];
+                var country  = document.forms["myForm"]["country"].value;
+                var address  = document.forms["myForm"]["address"].value;
+                var selectedLanguage = [];
+                for (var i=0; i < language.length; i++) {
+                    if (language[i].checked) {
+                        selectedLanguage.push(language[i].value);
+                    }
+                }
+                if (name == "") {
+                    alert("Name must be filled out");
+                    return false;
+                }
+                // if (x == "") {
+                //     alert("Email must be filled out");
+                //     return false;
+                // }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="myDiv">
+            <form name="myForm" class="myForm" action="modal.html" method="POST" autocomplete="off" onsubmit="return validateForm()">
+                <table class="myTable">
+                    <tr>
+                        <th colspan="2">Exam Registration Form</th>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td><input name="myName" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input name="myEmail" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                            <input name="gender" type="radio" value="M" />Male
+                            <input name="gender" type="radio" value="F" />Female
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Language</td>
+                        <td>
+                            <input name="language" type="checkbox" value="hindi" />Hindi
+                            <input name="language" type="checkbox" value="english" />English
+                            <input name="language" type="checkbox" value="urdu" />Urdu
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td>
+                            <select name="country">
+                                <option value="1">option text</option>
+                                <option value="2">option text</option>
+                                <option value="3">option text</option>
+                                <option value="4">option text</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>
+                            <textarea name="address" ></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="submit">Submit</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

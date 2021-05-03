@@ -1,0 +1,17 @@
+.myDiv {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    font-size: 20px;
+}
+.myForm {
+    display: inline-block;
+}
+table {
+    border: 1px solid black;
+}
+table tr td,  table tr th{
+    width: 300px;
+    border: 1px solid black;
+    padding: 15px;
+}
