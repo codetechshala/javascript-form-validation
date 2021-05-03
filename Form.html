@@ -4,26 +4,46 @@
         <link rel="stylesheet" href="form-style.css" />
         <script>
             function validateForm() {
-                var name     = document.forms["myForm"]["myName"].value;
-                var email    = document.forms["myForm"]["myEmail"].value;
-                var gender   = document.forms["myForm"]["gender"].value;
+                var name = document.forms["myForm"]["myName"].value;
+                var email = document.forms["myForm"]["myEmail"].value;
+                var gender = document.forms["myForm"]["gender"].value;
                 var language = document.forms["myForm"]["language"];
-                var country  = document.forms["myForm"]["country"].value;
-                var address  = document.forms["myForm"]["address"].value;
+                var country = document.forms["myForm"]["country"].value;
+                var address = document.forms["myForm"]["address"].value;
                 var selectedLanguage = [];
-                for (var i=0; i < language.length; i++) {
+                for (var i = 0; i < language.length; i++) {
                     if (language[i].checked) {
                         selectedLanguage.push(language[i].value);
                     }
                 }
                 if (name == "") {
-                    alert("Name must be filled out");
+                    alert("Student Name should not be empty");
                     return false;
                 }
-                // if (x == "") {
-                //     alert("Email must be filled out");
-                //     return false;
-                // }
+                if (email == "") {
+                    alert("Student Email should not be empty");
+                    return false;
+                }
+                if (email.indexOf("@") < 0) {
+                    alert("Student Email is not valid");
+                    return false;
+                }
+                if (gender == "") {
+                    alert("Student gender should be checked");
+                    return false;
+                }
+                if (!selectedLanguage.length) {
+                    alert("Languager should be checked");
+                    return false;
+                }
+                if (country == "") {
+                    alert("country should be selected");
+                    return false;
+                }
+                if (address == "") {
+                    alert("Student address should not be empty");
+                    return false;
+                }
             }
         </script>
     </head>
